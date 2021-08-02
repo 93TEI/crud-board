@@ -33,7 +33,7 @@ public class HelloControllerTest {
         mvc.perform(
                 get("/hello/dto")
                         .param("name", name)
-                        .param("amount", String.valueOf(amount)))
+                        .param("amount", String.valueOf(amount)))    //값은 String만 허용돼서 이렇게 바꿔줘야함
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value(equalTo(name))) //교재대로 안되어서 구글링해서 바꾸니까 됨
                 .andExpect(jsonPath("$.amount").value(equalTo(amount)));
