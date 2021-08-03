@@ -32,7 +32,7 @@ public class PostsRepositoryTest {
         String content = "테스트 본문";
 
         postsRepository.save(Posts.builder() // postsRepository.save는 테이블 posts에 insert/update 쿼리를 실행한다. id값이 있다면 update, 없다면 insert
-                .title(title)
+                .title(title)                //.save(), .findAll() : 리포지토리에서 JpaRepository을 상속하면 자동으로 사용가능한 메소드들
                 .content(content)
                 .author("email@naver.com")
                 .build());
