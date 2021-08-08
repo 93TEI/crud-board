@@ -1,5 +1,6 @@
 package com.jojoldu.book.springboot.domain.posts;
 
+import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,8 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor //기본 생성자 자동추가 (public Post(){} 과 같은 효과)
 @Entity //  테이블과 링크될 클래스임을 나타냄. Entity클래스에는 절대 Setter 메소드를 만들지 않을것. 대신 해당 필드의ㅣ 값 변경이 필요함녀 명확히 그 목적을 나타낼 수 있는 메소드를 추가해야한다.
-public class Posts { // 실제 DB와 매칭될 클래스. // Entity클래스에서는 절대 Setter 메소드를 만들지말것. 만들어야하면 목적과 의도를 명확히나타낼수있는 메소드 추가할것.
+public class Posts extends BaseTimeEntity {
+    // 실제 DB와 매칭될 클래스. // Entity클래스에서는 절대 Setter 메소드를 만들지말것. 만들어야하면 목적과 의도를 명확히나타낼수있는 메소드 추가할것.
 
     @Id // 기본키(PK)
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK의 생성 규칙을 나타냄. 괄호 안에 있는거 써야 auto_increment가 됨
