@@ -4,8 +4,14 @@ package com.jojoldu.book.springboot.domain.posts;
 //@Repository를 추가할 필요없음. Entity클래스와 Repository는 함께 위치해야함
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
 
 //Posts클래스로 Database를 접근하게 해줄 JpaRepository
 public interface PostsRepository extends JpaRepository<Posts, Long> {
     // JpaRepository<엔티티 클래스, PK타입>을 상속하기만 하면 기본적인 CRUD 메소드가 자동생성됨
+
+    @Query("SELECT p FROM Posts p ORDER BY p.id DESC")
+    List<Posts> findAllDesc();
 }

@@ -12,32 +12,35 @@
 //  때문에 var index 객체를 만들어 해당 객체에서 필요한 모든 함수를 선언한다.
 //  이렇게 하면 객체 안에서만 함수가 유효하기 때문에 겹칠 위험이 사라진다고 한다.
 
+
 var main = {
-    init : function(){
+    init : function () {
         var _this = this;
-        $('#btn-save').on('click', function(){ //.on() : 바인딩한다
+        $('#btn-save').on('click', function () {
             _this.save();
         });
     },
-    save : function(){
-        var data = {
-            title: $('#title').val(), // .val()은 값을 가져옴
-            author: $('#author').val(),
-            content: $('#content').val()
-        };
+   save : function () {
+           var data = {
+               title: $('#title').val(),
+               author: $('#author').val(),
+               content: $('#content').val()
+           };
 
-        $.ajax({
-            type: 'POST',
-            url: '/api/v1/posts',
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(data) //  JSON.stringify() : JavaScript 값이나 객체를 JSON 문자열로 변환
-        }).done(function(){
-            alert('글이 등록되었습니다.');
-            window.location.href = '/';     // 글 등록이 성공되면 메인페이지(/)로 이동함
-        }).fail(function(error){
-            alert(JSON.stringify(error));
-        });
+           $.ajax({
+               type: 'POST',
+               url: '/api/v1/posts',
+               dataType: 'json',
+               contentType:'application/json; charset=utf-8',
+               data: JSON.stringify(data)
+           }).done(function() {
+               alert('글이 등록되었습니다.');
+               window.location.href = '/';
+           }).fail(function (error) {
+               alert(JSON.stringify(error));
+           });
     }
 
 };
+
+main.init();
