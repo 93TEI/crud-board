@@ -18,12 +18,12 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
-    @PutMapping("/api/v1/posts/{id}") //수정,조회기능
+    @PutMapping("/api/v1/posts/{id}") //수정기능
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto){
         return postsService.update(id,requestDto);
     }
 
-    @GetMapping("/api/v1/posts/{id}") // 수정,조회기능
+    @GetMapping("/api/v1/posts/{id}") // 조회기능
     public PostsResponseDto findById (@PathVariable Long id)
     {
         return postsService.findById(id);
