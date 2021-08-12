@@ -21,7 +21,7 @@
             {{#posts}}
                 <tr>
                     <td>{{id}}</td>
-                    <td>{{title}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td> <!-- 타이틀에 a tag를 추가하여 타이틀을 글릭하면 해당 게시글의 수정 화면으로 이동-->
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
                 </tr>
