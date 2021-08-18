@@ -1,15 +1,23 @@
 package com.jojoldu.book.springboot.domain.user;
 
+import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class User {
+public class User extends BaseTimeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,9 +29,9 @@ public class User {
     private String email;
 
     @Column
-    private  String picture;
+    private String picture;
 
-    @Enumerated(EnumType.STRING) // JPA로 데이터베이스에 저장할 때, Enum값을 어떤 형태로 저장할지를 결정함. 기본적으로는 int로 된 숫자로 저장. int는 의미를 알기 어려워서 문자로 저장
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
@@ -35,14 +43,14 @@ public class User {
         this.role = role;
     }
 
-    public User update(String name, String picture){
+    public User update(String name, String picture) {
         this.name = name;
         this.picture = picture;
 
         return this;
     }
 
-    public String getRoleKey(){
+    public String getRoleKey() {
         return this.role.getKey();
     }
 }
