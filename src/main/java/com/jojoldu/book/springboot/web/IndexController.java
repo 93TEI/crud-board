@@ -1,5 +1,6 @@
 package com.jojoldu.book.springboot.web;
 
+import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.web.Dto.PostsResponseDto;
@@ -21,11 +22,11 @@ public class IndexController {
     //Repository 를 통해 데이터베이스에 접근 해 데이터를 가져오고, Service 를 통해 Repository 의 메소드를 이용하게 했으니
     //이제 Controller 가 Service 메소드를 이용 할 시간이다.
     @GetMapping("/")
-    public String index(Model model){ // Model은 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있다/ postsService.findAllDesc()로 가져온 결과를 posts로 index.mustache에 전달
+    public String index(Model model, @LoginUser SessionUser user){ // Model은 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있다/ postsService.findAllDesc()로 가져온 결과를 posts로 index.mustache에 전달
         model.addAttribute("posts",postsService.findAllDesc());
 
         // index.mustache에서 userName을 사용할수 있게 userName을 model에 저장하는 코드 추가
-        SessionUser user = (SessionUser) httpSession.getAttribute("user"); // CustomOAuth2UserService에서 로그인 성공 시 세션에 SessionUser를 저장하도록 구성. 즉, 로그인 성공시 "user"값 가져올수있다
+        // 삭제한 코드 : SessionUser user = (SessionUser) httpSession.getAttribute("user"); // CustomOAuth2UserService에서 로그인 성공 시 세션에 SessionUser를 저장하도록 구성. 즉, 로그인 성공시 "user"값 가져올수있다
         if(user!=null){
             model.addAttribute("userName",user.getName()); // 세션에 저장된 값이 있을때만 model에 userName으로 등록, 세션에 저장된 값이 없으면 model에 아무런 값이 없으니 로그인 버튼이 보임
         }
