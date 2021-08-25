@@ -46,6 +46,9 @@ dependencies {
     //데이터베이스 (세션을 저장하기 위한 저장소)
     compile('org.springframework.session:spring-session-jdbc')
 
+    //테스트 환경을 위한 임의로 인증된 사용자를 추가
+    testCompile("org.springframework.security:spring-security-test")
+    
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
 }
