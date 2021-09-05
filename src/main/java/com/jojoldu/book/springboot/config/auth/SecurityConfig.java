@@ -9,12 +9,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @RequiredArgsConstructor
 @EnableWebSecurity // Spring Security 설정들을 활성화시켜줌
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     private final CustomOAuth2UserService customOAuth2UserService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        super.configure(http); //블로그보고 추가한 두줄
-        http.csrf().disable(); //★ 이걸 추가하면 첫화면이 로그인페이지로 만들지 않은 페이지가 생김
         http
                 .csrf().disable()   //h2-console 화면을 사용하기 위해 해당 옵션들을 disable한다
                 .headers().frameOptions().disable() // 이것도
