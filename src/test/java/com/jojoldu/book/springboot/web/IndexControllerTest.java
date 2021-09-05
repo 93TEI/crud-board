@@ -21,7 +21,7 @@ public class IndexControllerTest {
     public void 메인페이지_로딩(){
         //when
         String body = this.restTemplate.getForObject("/", String.class);
-        System.out.println(body);
+        System.out.println("시작합니답ㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂㅂ"+body);
         //then
         assertThat(body).contains("스프링 부트로 시작하는 웹 서비스");
     }
