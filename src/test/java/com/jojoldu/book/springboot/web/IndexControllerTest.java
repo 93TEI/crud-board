@@ -24,7 +24,7 @@ public class IndexControllerTest {
 
         //then
         //assertThat(body).contains("testingtei");
-        Assertions.assertThat(body).isNotEmpty();
-        Assertions.assertThat(body).isNotNull();
+        Assertions.assertThat(body).isEmpty();
+        Assertions.assertThat(body).isNull();
     }
 }
