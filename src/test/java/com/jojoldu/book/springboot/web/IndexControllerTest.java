@@ -1,6 +1,5 @@
 package com.jojoldu.book.springboot.web;
 
-import com.jojoldu.book.springboot.config.WebConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +19,6 @@ public class IndexControllerTest {
 
     @Test
     public void 메인페이지_로딩(){
-
-        WebConfig temp;
         //when
         String body = this.restTemplate.getForObject("/", String.class);
 
