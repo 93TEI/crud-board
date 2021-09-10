@@ -51,4 +51,7 @@ dependencies {
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
+    //마리아DB 드라이버( 현재 H2 드라이버만 있는 상태여서 RDS로 바꾸는중)
+    compile("org.mariadb.jdbc:mariadb-java-client")
+
 }
