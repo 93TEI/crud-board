@@ -2,10 +2,6 @@ language: java
 jdk:
   - openjdk8
 
-#이게 없으면 오류가 남. 그래서 권한을 줌
-before_install:
-  chmod +x gradlew
-
 branches:
   only:
     - master
@@ -35,8 +31,10 @@ deploy:
     local_dir: deploy #before에서 생성한 디렉토리
     wait-until-deployed: true
 
+
+#이게 없으면 오류가 남. 그래서 권한을 줌
 before_install:
-  - chmod +x gradlew
+  chmod +x gradlew
 
 # CI 실행 완료 시 메일로 알람
 notifications:
