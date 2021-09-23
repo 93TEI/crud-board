@@ -33,6 +33,7 @@ deploy:
     wait-until-deployed: true
 
   - provider: codedeploy
+    edge: true
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY
 
