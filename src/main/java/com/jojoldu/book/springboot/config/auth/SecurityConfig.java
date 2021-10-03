@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable() // 이것도
                 .and()
                     .authorizeRequests() // URL별로 권환 관리 설정하는 옵션의 시작점이다
-                    .antMatchers("/","/css/**","/images/**","/js/**","h2-console/**").permitAll() // antMatchers : 권한 관리 대상을 지정하는 옵션
+                    .antMatchers("/","/css/**","/images/**","/js/**","h2-console/**","/profile").permitAll() // antMatchers : 권한 관리 대상을 지정하는 옵션
                     .antMatchers("/api/v1/**").hasRole(Role.USER.name()) //USER권한을 가진 사람만 가능하게 함 (permitAll은 전체열람권한을 준것)
                     .anyRequest().authenticated() // anyRequest() : 설정된 값들 이외 나머지 URL을 나타냄/ .authenticated()는 인증된 사용자에게만 허용하게 함(인즌=로그인)
                 .and()
