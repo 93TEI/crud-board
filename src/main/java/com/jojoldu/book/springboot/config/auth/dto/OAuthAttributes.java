@@ -54,7 +54,7 @@ public class OAuthAttributes {
                 .build();
     }
 
-    // toEntity() : User엔티티를 생성한다. OAuthAttributes에 엔티티를 생성하는 시점은 청므 가입할 때다. 가입할 때의 기본권한을 GUEST로 줌. OAuthAttributes클래스 생성 끝났으면 같은 패키지에 SessionUser클래스를 생성한다
+    // toEntity() : User엔티티를 생성한다. OAuthAttributes에 엔티티를 생성하는 시점은 처음 가입할 때다. 가입할 때의 기본권한을 GUEST로 줌(현재 USER로 바꿈). OAuthAttributes클래스 생성 끝났으면 같은 패키지에 SessionUser클래스를 생성한다
     public User toEntity(){
         return User.builder()
                 .name(name)
