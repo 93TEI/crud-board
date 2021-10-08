@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.fifaApi;
 
 import com.jojoldu.book.springboot.config.ApiKey;
+import com.jojoldu.book.springboot.config.auth.dto.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
