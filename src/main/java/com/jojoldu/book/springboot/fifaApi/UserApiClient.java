@@ -15,7 +15,7 @@ public class UserApiClient {
 
     private final RestTemplate restTemplate;
 
-    private final String API_KEY = ApiKey;
+    private final String API_KEY = ApiKey.getInstance().getKey();
 
     private final String UserInfoUrl = "https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname={nickname}";
 
