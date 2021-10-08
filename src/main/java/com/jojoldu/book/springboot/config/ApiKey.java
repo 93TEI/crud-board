@@ -1,5 +1,5 @@
 package com.jojoldu.book.springboot.config;
 
-public class ApiKey {
+public class ApiKey {햣 ㄱ
     public static String API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiMTYxMTI0ODg1NCIsImF1dGhfaWQiOiIyIiwidG9rZW5fdHlwZSI6IkFjY2Vzc1Rva2VuIiwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsIlgtQXBwLVJhdGUtTGltaXQiOiI1MDA6MTAiLCJuYmYiOjE2MzMzNjMyNDUsImV4cCI6MTY0ODkxNTI0NSwiaWF0IjoxNjMzMzYzMjQ1fQ.ltFkahmAnnAVTGoUh1k1Ez0dFQ40h7wObDqwEIfjLok";
 }
