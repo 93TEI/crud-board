@@ -10,8 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@RequiredArgsConstructor
-@Controller //머스테치에 url을 매핑하기 위한 코드
+@RequiredArgsConstructor // 선언된 모든 final 필드가 포함 된 생성자 생성
+@Controller //머스테치에 url을 매핑하기 위한 코드  / 이게 컨트롤러다 라는 뜻
 public class IndexController {
 
     private final PostsService postsService;
