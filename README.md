@@ -24,3 +24,4 @@
     21.10.14 복습 : DB (h2)
     21.10.16 복습 : 롬복, 리팩토링
     21.10.17 복습 : 프로젝트 복습 ( ~ PostsRepositoryTest)
+    21.10.18 복습 : 프로젝트 복습 ( PostsRepositoryTest ~ 수정/조회test)
