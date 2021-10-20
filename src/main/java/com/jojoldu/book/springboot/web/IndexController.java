@@ -39,7 +39,7 @@ public class IndexController {
     @GetMapping("/posts/update/{id}")
     public String postsUpdate(@PathVariable Long id, Model model){ // @PathVariable : URL 경로에 변수를 넣어줌
         PostsResponseDto dto = postsService.findById(id);
-        model.addAttribute("post",dto);
+        model.addAttribute("post",dto); // 뷰에 전달할 데이터를 키,값 으로 전달함
 
         return "posts-update";
     }
