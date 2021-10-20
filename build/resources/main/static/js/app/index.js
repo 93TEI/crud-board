@@ -48,7 +48,7 @@ var main = {
         $.ajax({
             type: 'PUT',    // 여러 HTTP Method 중 PUT 메소드를 선택. PostsApiController에 있는 API에서 이미 @PutMapping으로 선언해서 PUT 사용해야함
             url: '/api/v1/posts/'+id, // 수정할 게시물
-            dataType: 'json',
+            dataType: 'json',   // 수정 된 정보를 가지고 와 data 를 JSON 형식으로 바꿔서 PostsApiController에 보낼 예정
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function(){
