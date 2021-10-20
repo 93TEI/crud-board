@@ -25,3 +25,4 @@
     21.10.16 복습 : 롬복, 리팩토링
     21.10.17 복습 : 프로젝트 복습 ( ~ PostsRepositoryTest)
     21.10.18 복습 : 프로젝트 복습 ( PostsRepositoryTest ~ 수정/조회test)
+    21.10.20 복습 : 프로젝트 복습 ( JPA Auditing ~ 프로젝트 끝까지)
