@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class UserApiClient {
 
-    private final RestTemplate restTemplate;
+    private final RestTemplate restTemplate = new RestTemplate(); // new RestTemplate()를 붙여주니까 오류가 해결됨
     private final String API_KEY = ApiKey.API_KEY;
     private final String UserInfoUrl = "https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname={nickname}";
 
