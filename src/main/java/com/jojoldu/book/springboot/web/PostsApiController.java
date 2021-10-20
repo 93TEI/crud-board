@@ -20,7 +20,7 @@ public class PostsApiController {
     }
 
     @PutMapping("/api/v1/posts/{id}") //수정기능
-    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto)
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) //@RequestBody를 통해 JSON형태의 데이터를 PostsUpdateRequestDto형태로 바꿔줌
     {
         return postsService.update(id,requestDto);
     }

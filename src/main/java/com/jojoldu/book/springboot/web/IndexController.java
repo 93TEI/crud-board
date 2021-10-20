@@ -36,7 +36,7 @@ public class IndexController {
         return "posts-save";
     }
 
-    @GetMapping("/posts/update/{id}")
+    @GetMapping("/posts/update/{id}") //글제목을 눌렀을 때 get요청을 받아서 보내주는 역할의 클래스
     public String postsUpdate(@PathVariable Long id, Model model){ // @PathVariable : URL 경로에 변수를 넣어줌
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post",dto); // 뷰에 전달할 데이터를 키,값 으로 전달함
