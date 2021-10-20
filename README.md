@@ -26,3 +26,4 @@
     21.10.17 복습 : 프로젝트 복습 ( ~ PostsRepositoryTest)
     21.10.18 복습 : 프로젝트 복습 ( PostsRepositoryTest ~ 수정/조회test)
     21.10.20 복습 : 프로젝트 복습 ( JPA Auditing ~ 프로젝트 끝까지)
+    21.10.20 기능 추가 오류 해결( RestTemplate )
