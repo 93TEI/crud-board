@@ -1,4 +1,4 @@
-package com.jojoldu.book.springboot.fifa;
+package com.jojoldu.book.springboot.fifa.dto;
 
 import lombok.Data;
 import lombok.Getter;

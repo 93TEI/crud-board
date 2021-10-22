@@ -1,5 +1,7 @@
-package com.jojoldu.book.springboot.fifa;
+package com.jojoldu.book.springboot.fifa.web;
 
+import com.jojoldu.book.springboot.fifa.dto.UserResponseDto;
+import com.jojoldu.book.springboot.fifa.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

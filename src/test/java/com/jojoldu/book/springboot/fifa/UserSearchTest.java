@@ -1,5 +1,7 @@
 package com.jojoldu.book.springboot.fifa;
 
+import com.jojoldu.book.springboot.fifa.config.ApiKey;
+import com.jojoldu.book.springboot.fifa.dto.UserResponseDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ public class UserSearchTest {
     @Test
     public void nickNameSearch()
     {
-        String nickname = "크로스할게요";
+        String nickname = "은빛장미";
         System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         final HttpHeaders httpHeaders = new HttpHeaders();  //HttpHeaders는 서버에 데이터를 보내주는 방법

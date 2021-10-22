@@ -1,5 +1,7 @@
-package com.jojoldu.book.springboot.fifa;
+package com.jojoldu.book.springboot.fifa.service;
 
+import com.jojoldu.book.springboot.fifa.dto.UserResponseDto;
+import com.jojoldu.book.springboot.fifa.api.UserApiClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.jojoldu.book.springboot.fifa;
+package com.jojoldu.book.springboot.fifa.config;
 
 public class ApiKey {
     public static String API_KEY= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiMTYxMTI0ODg1NCIsImF1dGhfaWQiOiIyIiwidG9rZW5fdHlwZSI6IkFjY2Vzc1Rva2VuIiwic2VydmljZV9pZCI6IjQzMDAxMTQ4MSIsIlgtQXBwLVJhdGUtTGltaXQiOiI1MDA6MTAiLCJuYmYiOjE2MzQ3NDQ2NzEsImV4cCI6MTY1MDI5NjY3MSwiaWF0IjoxNjM0NzQ0NjcxfQ.tz1VG-al3Q3JRMJQP7wNoDXGtY6L_ng9LXD-_TPqONo";
