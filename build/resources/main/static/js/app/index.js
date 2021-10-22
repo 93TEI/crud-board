@@ -15,6 +15,9 @@ var main = {
         $('#btn-user-info').on('click', function () {
             _this.search_user_info();
         });
+        $('#btn-smr-info').on('click', function () {
+            _this.summoner_info();
+        });
     },
     save : function () {
         var data = {
@@ -79,16 +82,29 @@ var main = {
 
         $.ajax({
             type: 'GET',
-            url: '/api/v1/user/'+nickname,
+            url: '/api/v1/user/fifa/'+nickname,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8'
         }).done(function (res) {
-            alert('글이 등록되었습니다.');
             alert(JSON.stringify(res));
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
     }
+
+    summoner_info : function () {
+        const nickname = $('#summoner').val();
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/v1/user/lol/'+summoner,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8'
+        }).done(function (res) {
+            alert(JSON.stringify(res));
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
 
 };
 
