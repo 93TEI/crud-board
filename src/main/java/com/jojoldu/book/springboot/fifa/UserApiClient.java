@@ -17,7 +17,7 @@ public class UserApiClient {
     private final String UserInfoUrl = "https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname={nickname}";
 
     public UserResponseDto requestUserInfo(String nickname) {
-        final HttpHeaders httpHeaders = new HttpHeaders();
+        final HttpHeaders httpHeaders = new HttpHeaders();  //HttpHeaders는 서버에 데이터를 보내주는 방법
         httpHeaders.set("Authorization", API_KEY);
 
         final HttpEntity<String> entity = new HttpEntity<>(httpHeaders);
