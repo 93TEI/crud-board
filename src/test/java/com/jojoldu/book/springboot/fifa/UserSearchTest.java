@@ -31,8 +31,7 @@ public class UserSearchTest {
     @Test
     public void nickNameSearch()
     {
-        String nickname = "은빛장미";
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAA");
+        String nickname = "크로스할게요";
 
         final HttpHeaders httpHeaders = new HttpHeaders();  //HttpHeaders는 서버에 데이터를 보내주는 방법
         httpHeaders.set("Authorization", ApiKey.API_KEY);

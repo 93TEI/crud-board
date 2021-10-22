@@ -24,7 +24,6 @@ public class SummonerSearchTest {
     public void SummonerSearch()
     {
         String summonerName = "블리츠그랩꾸드빵";
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         userDB = restTemplate.getForObject(SummonerInfoUrl+summonerName+"?api_key="+ApiKey.API_KEY,SummonerDto.class);
 
