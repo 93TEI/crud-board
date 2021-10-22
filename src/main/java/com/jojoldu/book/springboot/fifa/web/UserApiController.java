@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserApiController {
     private final UserService userService;
 
-    @GetMapping("/api/v1/user/{nickname}")
+    @GetMapping("/api/v1/user/fifa/{nickname}")
     public UserResponseDto get(@PathVariable String nickname) {
         return userService.searchUserInfo(nickname);
     }
