@@ -4,5 +4,5 @@
 
 application-oauth.properties
 
-ApiKey.properties
+application-ApiKey.properties
 ApiKey.java
