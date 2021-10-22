@@ -7,9 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -21,7 +18,7 @@ public class SummonerSearchTest {
 
     private SummonerDto userDB;
 
-    private final String SummonerInfoUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}";
+    private final String SummonerInfoUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 
     @Test
     public void SummonerSearch()
@@ -29,11 +26,7 @@ public class SummonerSearchTest {
         String summonerName = "블리츠그랩꾸드빵";
         System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
-        final HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.set("Authorization", ApiKey.API_KEY);
-        final HttpEntity<String> entity = new HttpEntity<>(httpHeaders);
-
-        userDB = restTemplate.exchange(SummonerInfoUrl, HttpMethod.GET, entity, SummonerDto.class, summonerName).getBody();
+        userDB = restTemplate.getForObject(SummonerInfoUrl+summonerName+"?api_key="+ApiKey.API_KEY,SummonerDto.class);
 
         System.out.println(userDB);
     }
