@@ -19,4 +19,10 @@ public class UserService
     {
         return userApiClient.requestUserInfo(nickname);
     }
+
+    @Transactional
+    public String userInfoSave(UserResponseDto userResponseDto)
+    {
+        return user
+    }
 }

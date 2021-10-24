@@ -13,7 +13,8 @@ public class UserApiController {
     private final UserService userService;
 
     @GetMapping("/api/v1/user/fifa/{nickname}")
-    public UserResponseDto get(@PathVariable String nickname) {
-        return userService.searchUserInfo(nickname);
+    public String get(@PathVariable String nickname) {
+        UserResponseDto userResponseDto = userService.searchUserInfo(nickname);
+        return userService.userInfoSave(userResponseDto);
     }
 }
