@@ -1,7 +1,8 @@
 package com.jojoldu.book.springboot.fifa.service;
 
-import com.jojoldu.book.springboot.fifa.dto.UserResponseDto;
 import com.jojoldu.book.springboot.fifa.api.UserApiClient;
+import com.jojoldu.book.springboot.fifa.domain.UserRepository;
+import com.jojoldu.book.springboot.fifa.dto.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ public class UserService
 {
     @Autowired
     private final UserApiClient userApiClient;
+    private final UserRepository userRepository;
 
     @Transactional(readOnly = true)
     public UserResponseDto searchUserInfo(String nickname)
@@ -23,6 +25,6 @@ public class UserService
     @Transactional
     public String userInfoSave(UserResponseDto userResponseDto)
     {
-        return user
+        return userRepository.save(userResponseDto.toEntity()).getNickname();
     }
 }
