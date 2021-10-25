@@ -1,10 +1,8 @@
 package com.jojoldu.book.springboot.fifa.dto;
 
 import com.jojoldu.book.springboot.fifa.domain.User;
-import lombok.Data;
 import lombok.Getter;
 
-@Data
 @Getter
 public class UserResponseDto {
     private String accessId;
@@ -18,5 +16,12 @@ public class UserResponseDto {
                 .nickname(nickname)
                 .level(level)
                 .build();
+    }
+
+    public UserResponseDto(User entity)
+    {
+        this.accessId = entity.getAccessId();
+        this.nickname = entity.getNickname();
+        this.level = entity.getLevel();
     }
 }
