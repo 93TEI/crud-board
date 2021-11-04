@@ -2,6 +2,7 @@ var main = {
     init : function () {
         var _this = this;
         $('#btn-save').on('click', function () {
+            console.log("test");
             _this.save();
         });
 
@@ -12,9 +13,7 @@ var main = {
         $('#btn-delete').on('click',function(){
             _this.delete();
         });
-        $('#btn-user-info').on('click', function () {
-            _this.search_user_info();
-        });
+
         $('#btn-smr-info').on('click', function () {
             _this.summoner_info();
         });
@@ -77,21 +76,7 @@ var main = {
             alert(JSON.stringify(error));
         });
     }
-    search_user_info : function () {
-        const nickname = $('#nickname').val();
-
-        $.ajax({
-            type: 'GET',
-            url: '/api/v1/user/fifa/'+nickname,
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8'
-        }).done(function (id) {
-            window.location.href = '/user/info/'+id;
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
-    }
-
+/*
     summoner_info : function () {
         const nickname = $('#summoner').val();
 
@@ -105,7 +90,7 @@ var main = {
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
-
+    }*/
 };
 
 main.init();

@@ -85,10 +85,10 @@ var main = {
             url: '/api/v1/user/fifa/'+nickname,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8'
-        }).done(function (res) {
-            alert(JSON.stringify(res));
+        }).done(function (id) {
+            window.location.href = '/user/info/'+id;
         }).fail(function (error) {
-            alert(JSON.stringify(error));
+            alert("구단주가 존재하지 않습니다.");
         });
     }
 

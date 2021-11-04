@@ -11,9 +11,11 @@ import org.springframework.web.client.RestTemplate;
 public class SummonerApiClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
+    SummonerDto summonerDto;
     private final String SummonerInfoUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
     public SummonerDto requestSummonerInfo(String summonerName)
     {
-        return restTemplate.getForObject(SummonerInfoUrl+summonerName+"?api_key="+ApiKey.API_KEY,SummonerDto.class);
+        summonerDto = restTemplate.getForObject(SummonerInfoUrl+summonerName+"?api_key="+ApiKey.API_KEY,SummonerDto.class);
+        return summonerDto;
     }
 }
